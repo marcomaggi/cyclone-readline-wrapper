@@ -1,0 +1,101 @@
+-*- coding: utf-8-unix -*-
+
+			Cyclone Readline Wrapper
+			========================
+
+
+Topics
+------
+
+  1. Overview
+  2. License
+  3. Install
+  A. Bug reports
+  B. Resources
+
+
+1. Overview
+-----------
+
+This package provides a  set of files to be used  to wrap Cyclone Scheme
+interpreter executable  with the  GNU Readline  wrapper Rlwrap,  by Hans
+Lub; it supports GNU+Linux systems.
+
+  This package installs "ice", a Bourne shell script for Cyclone Scheme,
+and a set of completion files.  The scripts will spawn "rlwrap" with the
+appropriate configuration and executable.
+
+  The scripts  are meant to be  installed in the "bin"  directory of the
+user's  home,  while  the  completion files  are  concatenated,  sorted,
+filtered for uniqueness and installed as:
+
+   .cyclone_completions
+
+in the user's home directory.
+
+  The installation directories can be changed by modifying the variables
+in the "Makefile".
+
+  The "ice" script is automatically generated from the template "ice.in"
+that is preprocessed by the "Makefile".  The template itself is meant to
+be customised at will.
+
+
+2. License
+----------
+
+The files in this directory are in the public domain.
+
+
+3. Install
+----------
+
+The following rules are available:
+
+  all		Build the scripts  from the templates; build
+		the completions file.
+
+  clean		Remove the script and completion files.
+
+  install	Install the script and completion files.
+
+  uninstall	Uninstall the script and completion files.
+
+  To test what a rule will do use the "-n" option; example:
+
+    $ make install -n
+
+  The "Makefile" supports the  "DESTDIR" environment variable to install
+the files under a temporary location; example:
+
+    $ make install DESTDIR=/tmp/marco/cyclone-readline-wraps
+
+
+A. Bug reports
+--------------
+
+Bug  reports and  contributions are  welcome.  Register  them using  the
+issue tracker at GitHub.
+
+
+B. Resources
+------------
+
+The latest revision of this package is available at:
+
+       <http://github.com/marcomaggi/cyclone-readline-wrappers/>
+
+Rlwrap can be found here:
+
+		 <https://github.com/hanslub42/rlwrap>
+
+Cyclone Scheme can be downloaded from:
+
+	       <https://github.com/justinethier/cyclone>
+
+### end of file
+# Local Variables:
+# mode: text
+# fill-column: 72
+# paragraph-start: "*"
+# End:
